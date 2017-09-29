@@ -156,7 +156,7 @@ public class FortuneTeller {
 
 			//Mode of Transportation
 				//The user's mode of transportation will determined by the user's favorite color.
-			String transportation = null; //eclipse asked me to initialize transportation....but only transportation?
+			String transportation = null;
 			
 			if (color.contains("red")) {
 				transportation = ("your McLaren P1 LM");
@@ -205,10 +205,6 @@ public class FortuneTeller {
 		System.out.println(firstName.substring(0,1).toUpperCase() + firstName.substring(1).toLowerCase() + " " 
 				+ lastName.substring(0,1).toUpperCase() + lastName.substring(1).toLowerCase() + " will retire in " + retirementYears + 
 				" years with $" + retirementBalance + " in the bank, a vacation home in " + vacaHome + ", and travel by " + transportation + ".");
-		
-		
-		
-		
 		
 		
 		
