@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class FortuneTeller {
+public class FortuneTellerPlusStretch {
 
 	public static void main(String[] args) {
 
@@ -205,6 +205,36 @@ public class FortuneTeller {
 		System.out.println(firstName.substring(0,1).toUpperCase() + firstName.substring(1).toLowerCase() + " " 
 				+ lastName.substring(0,1).toUpperCase() + lastName.substring(1).toLowerCase() + " will retire in " + retirementYears + 
 				" years with $" + retirementBalance + " in the bank, a vacation home in " + vacaHome + ", and travel by " + transportation + ".");
+		
+		
+		
+		
+		
+//Stretch tasks
+		//Give the user the ability to quit the program by typing "Quit" (should not be case sensitive) at any point where the program is looking for user input. 
+		//The program should print “Nobody likes a quitter...” before ending.
+				//Tip: To do this with the prompts that expect an integer, you will need to read in a String, check for "Quit", 
+					//then use Integer.parseInt(value) to convert the user input to an int.
+				//Also tip: You can call System.exit(0); to terminate your program immediately.
+				//Also also tip: Rather than typing the same code over and over, you can create a method that calls System.exit(0); 
+					//if the user typed "Quit", then call that method, passing it the user input. Its signature should look something like:
+		 
+					//public static void checkForQuit(String userInput)
+		
+		
+		
+		//Research while (page 115 in the Head Start book) or do/while loops and 
+		//use them to check whether a user typed "Help" for favorite color, printing the list of colors each time the user types "Help".
+		 	//What is your favorite ROYGBIV color?
+				//Help
+				//The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.
+				//Help
+				//The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.
+				//Blue
+		
+		
+		
+		
 		
 		
 		
