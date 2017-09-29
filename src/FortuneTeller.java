@@ -41,7 +41,7 @@ public class FortuneTeller {
 				System.out.println("Thank you!");
 			}
 			
-			System.out.println(""); //space between questions.
+			input.nextLine();
 			input.nextLine();
 		
 		//Ask the user for the user’s favorite ROYGBIV color.
@@ -52,44 +52,45 @@ public class FortuneTeller {
 			color = input.nextLine().toLowerCase();
 			
 			//using if/else:
-//			if (color.contains("help")) {
-//				System.out.println("The \"ROYGBIV\" colors are: Red, Orange, Yellow, Green, Blue, Indigo, and Violet.");
-//				System.out.println("What is your favorite \"ROYGBIV\" color?");
-//				color = input.nextLine().toLowerCase();
-//			} else if  (!color.contains("red") && 
-//						!color.contains("orange") && 
-//						!color.contains("yellow") && 
-//						!color.contains("green") && 
-//						!color.contains("blue") && 
-//						!color.contains("indigo") && 
-//						!color.contains("violet")) {
-//				System.out.println("Please select a \"ROYGBIV\" color.");
-//				color = input.nextLine().toLowerCase();
-//			} else {
-//				System.out.println("Well that's colorful.");
-//			}
+			if (color.contains("help")) {
+				System.out.println("The \"ROYGBIV\" colors are: Red, Orange, Yellow, Green, Blue, Indigo, and Violet.\n\nWhat is your favorite \"ROYGBIV\" color?");
+				color = input.nextLine().toLowerCase();
+			} else if  (!color.contains("red") && 
+						!color.contains("orange") && 
+						!color.contains("yellow") && 
+						!color.contains("green") && 
+						!color.contains("blue") && 
+						!color.contains("indigo") && 
+						!color.contains("violet")) {
+				System.out.println("Please select a \"ROYGBIV\" color.");
+				color = input.nextLine().toLowerCase();
+			} else {
+				System.out.println("Well that's colorful.");
+			}
 		//need loop :(
 			
 			//using switch
-			switch(color) {
-			case "help":
-			System.out.println("The \"ROYGBIV\" colors are: Red, Orange, Yellow, Green, Blue, Indigo, and Violet.");
-			System.out.println("What is your favorite \"ROYGBIV\" color?");
-			color = input.nextLine();
-			break;
-			case "red":
-			case "orange":
-			case "yellow":
-			case "green":
-			case "blue":
-			case "indigo":
-			case "violet":
-			System.out.println("Well that's colorful.");
-			break;
-			default:
-				System.out.println("Please choose a \"ROYGBIV\" color.");
-				color = input.nextLine();
-			}
+//			switch(color) {
+//			case "help":
+//			System.out.println("The \"ROYGBIV\" colors are: Red, Orange, Yellow, Green, Blue, Indigo, and Violet.\n\nWhat is your favorite \"ROYGBIV\" color?");
+//			color = input.nextLine();
+//			break;
+//			case "red":
+//			case "orange":
+//			case "yellow":
+//			case "green":
+//			case "blue":
+//			case "indigo":
+//			case "violet":
+//			System.out.println("Well that's colorful.");
+//			break;
+//			default:
+//				System.out.println("Please choose a \"ROYGBIV\" color.");
+//				color = input.nextLine();
+//			}
+			
+			input.nextLine();
+			
 		
 		//Ask the user for the user's number of siblings.
 			double siblings;
