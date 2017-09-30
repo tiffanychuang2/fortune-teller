@@ -6,19 +6,31 @@ public class FortuneTellerPlusStretch {
 
 		Scanner input = new Scanner(System.in);
 		
+		//public static void checkForQuit (String userInput);
+		
 //Part One
 		//Ask the user for the user’s first name.
 			String firstName;
 		
 			System.out.println("Hello!  What is your first name?");
-			firstName = input.nextLine();
+			firstName = input.nextLine().toLowerCase();
+			
+			if (firstName.equals("quit")) {
+				System.out.println("Nobody likes a quitter...");
+				System.exit(0);
+			}
 		
 		
 		//Ask the user for the user’s last name.
 			String lastName;
 		
 			System.out.println("Welcome, " + firstName.substring(0,1).toUpperCase() + firstName.substring(1).toLowerCase() + "!  What is your last name?");
-			lastName = input.nextLine();
+			lastName = input.nextLine().toLowerCase();
+			
+			if (lastName.equals("quit")) {
+				System.out.println("Nobody likes a quitter...");
+				System.exit(0);
+			}
 					
 		
 		//Ask the user for the user’s age.
@@ -28,11 +40,17 @@ public class FortuneTellerPlusStretch {
 					+ lastName.substring(0,1).toUpperCase() + lastName.substring(1).toLowerCase() + ". How old are you?");
 			age = input.nextInt();
 			
+			
+			//System.exit(0);
+			
+			
 			//if user inputs 0 or less for age.  part two references a "less than 0" vacation home.
 //			if (age <= 0) {
 //				System.out.println("You are not zero years old.  Please try again.\nHow old are you?");
 //				age = input.nextInt();
 //			}
+			
+			
 //		
 		
 		//Ask the user for the user’s birth month (as an 'int').
@@ -48,6 +66,8 @@ public class FortuneTellerPlusStretch {
 				System.out.println("Thank you!");
 			}
 			
+			//System.exit(0);
+			
 			input.nextLine();
 		
 		//Ask the user for the user’s favorite ROYGBIV color.
@@ -58,9 +78,20 @@ public class FortuneTellerPlusStretch {
 			color = input.nextLine().toLowerCase();
 			
 			//using if/else:
-			if (color.contains("help")) {
-				System.out.println("The \"ROYGBIV\" colors are: Red, Orange, Yellow, Green, Blue, Indigo, and Violet.\n\nWhat is your favorite \"ROYGBIV\" color?");
+			//if (color.contains("help")) {
+				//System.out.println("The \"ROYGBIV\" colors are: Red, Orange, Yellow, Green, Blue, Indigo, and Violet.\n\nWhat is your favorite \"ROYGBIV\" color?");
+				//color = input.nextLine().toLowerCase();
+			//}
+			
+			while (color.equals("help")) {
+				System.out.println("The \"ROYGBIV\" colors are: Red, Orange, Yellow, Green, Blue, Indigo, and Violet.\nWhat is your favorite \"ROYGBIV\" color?");
 				color = input.nextLine().toLowerCase();
+			}
+			
+			
+			if (color.equals("quit")) {
+				System.out.println("Nobody likes a quitter...");
+				System.exit(0);
 			} else if  (!color.contains("red") && 
 						!color.contains("orange") && 
 						!color.contains("yellow") && 
@@ -94,6 +125,10 @@ public class FortuneTellerPlusStretch {
 //				System.out.println("Please choose a \"ROYGBIV\" color.");
 //				color = input.nextLine();
 //			}
+			
+//			if (lastName.equals("quit")) {
+//			System.out.println("Nobody likes a quitter...");
+//			System.exit(0);
 			
 			input.nextLine();
 			
