@@ -6,14 +6,13 @@ public class FortuneTellerPlusStretch {
 
 		Scanner input = new Scanner(System.in);
 		
-		//public static void checkForQuit (String userInput);
-		
 //Part One
 		//Ask the user for the user’s first name.
 			String firstName;
 		
 			System.out.println("Hello!  What is your first name?");
 			firstName = input.nextLine().toLowerCase();
+			checkForQuit (firstName);
 			
 			if (firstName.equals("quit")) {
 				System.out.println("Nobody likes a quitter...");
@@ -26,6 +25,7 @@ public class FortuneTellerPlusStretch {
 		
 			System.out.println("Welcome, " + firstName.substring(0,1).toUpperCase() + firstName.substring(1).toLowerCase() + "!  What is your last name?");
 			lastName = input.nextLine().toLowerCase();
+			checkForQuit (lastName);
 			
 			if (lastName.equals("quit")) {
 				System.out.println("Nobody likes a quitter...");
@@ -34,39 +34,38 @@ public class FortuneTellerPlusStretch {
 					
 		
 		//Ask the user for the user’s age.
-			int age;
+			String age;
+			int ageNumber = 0;
 			
 			System.out.println("Thank you, " + firstName.substring(0,1).toUpperCase() + firstName.substring(1).toLowerCase() + " " 
 					+ lastName.substring(0,1).toUpperCase() + lastName.substring(1).toLowerCase() + ". How old are you?");
-			age = input.nextInt();
+			age = input.nextLine().toLowerCase();
 			
-			
-			//System.exit(0);
-			
-			
-			//if user inputs 0 or less for age.  part two references a "less than 0" vacation home.
-//			if (age <= 0) {
-//				System.out.println("You are not zero years old.  Please try again.\nHow old are you?");
-//				age = input.nextInt();
-//			}
+			checkForQuit (age);
+			if (!age.equals("quit")) {
+				ageNumber = Integer.parseInt(age);
+			}
 			
 			
 //		
 		
 		//Ask the user for the user’s birth month (as an 'int').
-			int birthMonth;
+			String birthMonth;
+			int monthNumber = 0;
 			
 			System.out.println("What is your birth month?  Please use number format, ex: \"1\" for January, \"12\" for December, etc.");
-			birthMonth = input.nextInt();
+			birthMonth = input.nextLine();
+			checkForQuit(birthMonth);
+			if (!birthMonth.equals("quit")) {
+			monthNumber = Integer.parseInt(birthMonth);
 			
-			if (birthMonth >= 13) {
+			if (monthNumber >= 13) {
 				System.out.println("There are only 12 months in a year.  Please enter your correct birth month.");
-				birthMonth = input.nextInt();
+				birthMonth = input.nextLine();			
 			} else {
 				System.out.println("Thank you!");
 			}
-			
-			//System.exit(0);
+
 			
 			input.nextLine();
 		
@@ -76,6 +75,7 @@ public class FortuneTellerPlusStretch {
 			
 			System.out.println("What is your favorite \"ROYGBIV\" color?  Please respond \"Help\" for \"ROYGBIV\" colors.");
 			color = input.nextLine().toLowerCase();
+			checkForQuit (color);
 			
 			//using if/else:
 			//if (color.contains("help")) {
@@ -134,16 +134,20 @@ public class FortuneTellerPlusStretch {
 			
 		
 		//Ask the user for the user's number of siblings.
-			double siblings;
+			String siblings;
+			double numberOfSiblings = 0;
 			
 			System.out.println("How many siblings do you have?");
-			siblings = input.nextDouble();
+			siblings = input.nextLine();
+			checkForQuit (siblings);
 			
-			if (siblings == 0) {
+			if (!siblings.equals("quit")) {
+				numberOfSiblings = Integer.parseInt(siblings);
+			} else if (numberOfSiblings == 0) {
 				System.out.println("Only child.  Nice.");
-			} else if (siblings >= 4 && siblings < 6) {
+			} else if (numberOfSiblings >= 4 && numberOfSiblings < 6) {
 				System.out.println("That's a pretty big family!");
-			} else if (siblings >=6) {
+			} else if (numberOfSiblings >=6) {
 				System.out.println("Your parents are nuts.");
 			} else {
 				System.out.println("How fun.");
@@ -158,7 +162,7 @@ public class FortuneTellerPlusStretch {
 				//The user's number of years until retirement will be based on whether the user's age is odd or even.
 			int retirementYears;
 			
-			if (age%2 == 0) {
+			if (ageNumber%2 == 0) {
 				retirementYears = 26;
 			} else {
 				retirementYears = 25;
@@ -170,15 +174,15 @@ public class FortuneTellerPlusStretch {
 				//If the user enters a number less than zero, give the user a bad location!
 			String vacaHome;
 			
-			if (siblings == 0) {
+			if (numberOfSiblings == 0) {
 				vacaHome = ("Argentina");
-			} else if (siblings == 1) {
+			} else if (numberOfSiblings == 1) {
 				vacaHome = ("Costa Rica");
-			} else if (siblings == 2) {
+			} else if (numberOfSiblings == 2) {
 				vacaHome = ("Italy");
-			} else if (siblings == 3) {
+			} else if (numberOfSiblings == 3) {
 				vacaHome = ("Florida");
-			} else if (siblings > 3) {
+			} else if (numberOfSiblings > 3) {
 				vacaHome = ("Colorado");
 			} else {
 				vacaHome = ("Oymyakon, Russia (sorry)");
@@ -217,16 +221,15 @@ public class FortuneTellerPlusStretch {
 				//If the user enters something other than 1-12 for birth month, the user's balance will be $0.00.
 			double retirementBalance;
 			
-			if (birthMonth >= 1 && birthMonth <= 4) {
+			if (monthNumber >= 1 && monthNumber <= 4) {
 				retirementBalance = 6298859.81;
-			} else if (birthMonth >= 5 && birthMonth <= 8) {
+			} else if (monthNumber >= 5 && monthNumber <= 8) {
 				retirementBalance = 5948500.24;
-			} else if (birthMonth >= 9 && birthMonth <=12) {
+			} else if (monthNumber >= 9 && monthNumber <=12) {
 				retirementBalance = 4273709.75;
 			} else {
 				retirementBalance = 0.00;
 			}
-			
 
 		
 //Part 3
@@ -239,9 +242,7 @@ public class FortuneTellerPlusStretch {
 		
 		System.out.println(firstName.substring(0,1).toUpperCase() + firstName.substring(1).toLowerCase() + " " 
 				+ lastName.substring(0,1).toUpperCase() + lastName.substring(1).toLowerCase() + " will retire in " + retirementYears + 
-				" years with $" + retirementBalance + " in the bank, a vacation home in " + vacaHome + ", and travel by " + transportation + ".");
-		
-		
+				" years with $" + retirementBalance + " in the bank, a vacation home in " + vacaHome + ", and travel by " + transportation + "."); }
 		
 		
 		
@@ -267,15 +268,13 @@ public class FortuneTellerPlusStretch {
 				//The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.
 				//Blue
 		
-		
-		
-		
-		
-		
-		
-		
-		input.close();
-		
+	} 
+	
+	public static void checkForQuit(String userInput) {
+		if (userInput.equals("quit")) {
+			System.out.println("Nobody likes a quitter...");
+			System.exit(0);
+		}
 	}
 
 }
