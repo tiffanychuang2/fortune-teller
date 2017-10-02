@@ -46,8 +46,7 @@ public class FortuneTellerPlusStretch {
 				ageNumber = Integer.parseInt(age);
 			}
 			
-			
-//		
+		
 		
 		//Ask the user for the user’s birth month (as an 'int').
 			String birthMonth;
@@ -56,12 +55,13 @@ public class FortuneTellerPlusStretch {
 			System.out.println("What is your birth month?  Please use number format, ex: \"1\" for January, \"12\" for December, etc.");
 			birthMonth = input.nextLine();
 			checkForQuit(birthMonth);
+			
 			if (!birthMonth.equals("quit")) {
 			monthNumber = Integer.parseInt(birthMonth);
 			
 			if (monthNumber >= 13) {
 				System.out.println("There are only 12 months in a year.  Please enter your correct birth month.");
-				birthMonth = input.nextLine();			
+				monthNumber = input.nextInt();			
 			} else {
 				System.out.println("Thank you!");
 			}
@@ -104,7 +104,6 @@ public class FortuneTellerPlusStretch {
 			} else {
 				System.out.println("Well that's colorful.");
 			}
-		//need loop :(
 			
 			//using switch
 //			switch(color) {
@@ -198,13 +197,13 @@ public class FortuneTellerPlusStretch {
 			String transportation = null;
 			
 			if (color.contains("red")) {
-				transportation = ("your McLaren P1 LM");
+				transportation = ("McLaren P1 LM");
 			} else if (color.contains("orange")) {
-				transportation = ("your unicycle");
+				transportation = ("unicycle");
 			} else if (color.contains("yellow")) {
 				transportation = ("walking");
 			} else if (color.contains("green")) {
-				transportation = ("your Honda Fit");
+				transportation = ("Honda Fit");
 			} else if (color.contains("blue")) {
 				transportation = ("public transportation");
 			} else if (color.contains("indigo")) {
